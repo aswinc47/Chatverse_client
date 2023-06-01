@@ -1,0 +1,417 @@
+
+.leftside{
+    background-color: #F0F0F0;
+    height: 100vh;
+    padding: 0.9em;
+}
+.leftsidetop{
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.searchdiv{
+    width: 100%;
+    text-align: center;
+}
+
+/* Active friends */
+.activefriends::-webkit-scrollbar{
+    display: none;
+}
+.activefriends{
+    width: 100%;
+    background-color: white;
+    padding: 0.4rem;
+    border-radius: 15px;
+    display: flex;
+    overflow-x: scroll;
+}
+.activefriendsingle img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+}
+.activefriendsingle{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 40px;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+/* Friends */
+
+.friends{
+    background-color: white;
+    border-radius: 15px;
+    padding: 0.4em;
+    height: 70vh;
+    overflow-y: scroll;
+}
+.friends::-webkit-scrollbar{
+    display: none;
+}
+.friend{
+    display: flex;
+    align-items: center;
+}
+.friendname{
+    margin-left: 1em;
+    font-weight: 500;
+}
+.hover-friends{
+    padding: 0.4em;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 0.5em;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+}
+.friend-active{
+    background-color: #F0F0F0;
+}
+.hover-friends:hover{
+    background-color: #A5C0DD;
+}
+
+/* Right side */
+.rightside{
+    background-color: #F0F0F0;
+    height: 100vh;
+}
+
+/* -chathead */
+.chatarea{
+    height: 100vh;
+    padding-inline: 0.5em;
+}
+.chathead{
+    width: 100%;
+    background-color: #F0F0F0;
+    height: 9vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1.5em;
+}
+.chatheadname{
+    margin:0;
+}
+.chatheadleft{
+    display: flex;
+    align-items: center;
+}
+
+.chatheadimage{
+    background-color: tomato;
+    height: 3.8em;
+    width: 3.8em;
+    border-radius: 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 0.5em;
+}
+.chatheadimage img{
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+.chathead-title{
+    margin-left: 1.3em;
+}
+
+.chatheadbutton{
+    color: aqua;
+}
+
+.chatheadright{
+    display: flex;
+}
+
+.chatheadicondiv{
+    margin-left: 1em;
+}
+
+.chatheadicon{
+    font-size: 0.7em;
+}
+
+/* -messagearea */
+
+.messagearea{
+    height: 82vh;
+    width: 100%;
+    background-color: white;
+    padding-top: 1em;
+    padding: 1em;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+.messagearea::-webkit-scrollbar{
+    display: none;
+}
+
+.mymessage{
+    text-align: end;
+}
+.mymessagetext p{
+    background-color: #0081B4;
+    border-radius: 20px;
+    color: white;
+    display: inline-block;
+    padding: 0.7em 1em;
+    margin: 0;
+    max-width: 25em;
+    line-height: 1.4;
+    text-align: start;
+}
+.friendmsg p{
+    background-color: #F0F0F0 !important;
+    color: black;
+}
+.mymessagetime{
+    margin-top: 0.4em;
+}
+.mymessagetime p{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-inline: 0.5rem;
+    color: rgb(110, 119, 127);
+}
+.friendmsgdiv{
+    display: flex;
+}
+.friendmsgdiv img{
+    width: 100%;
+}
+
+.friendmsgimg{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 40px;
+    margin-right: 0.5em;
+    background-position: center;
+    background-size: cover;
+}
+.friendmsgimg img{
+    border-radius: 40px;
+}
+.mymessagetext p img{
+    width: 100%;
+}
+
+/* MessageSend */
+.messagesenddiv{
+    height: 9vh;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1em;
+    position: relative;
+}
+.messageinput{
+    border: 0;
+    width: 100%;
+    height: 2.5em;
+    border-radius: 40px;
+    background-color: white;
+    outline: 0;
+    padding-inline: 1em 4em;
+}
+.messageinput:focus-visible{
+    border: 0;
+
+}
+.messagesendinput{
+    width: 86%;
+    position: relative;
+}
+.emojiicon{
+    position: absolute;
+    right: 0.7em;
+    top: 0.3em;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.emojiicon:hover{
+    scale: 1.1;
+}
+.emojisection{
+    background-color: rgb(209, 248, 201);
+    position: absolute;
+    right: 6.5em;
+    bottom: 3.4em;
+    border-radius: 30px 30px 0 30px;
+    padding: 1em;
+    display: none;
+    transition: 1s ease-in-out;
+}
+.emoji{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 1em;
+}
+.emoji span{
+    cursor: pointer;
+}
+
+#emoji{
+  display: none; 
+}
+
+#emoji:checked~.emojisection{
+    display: block;
+}
+
+
+
+
+/* Infoarea */
+.infoarea{
+    background-color: white;
+}
+
+.infouser{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 1em;
+}
+.userinfoimgdiv{
+    width: 6em;
+    height: 6em;
+    border-radius: 80px;
+}
+.userinfoimgdiv img{
+    width: 100%;
+    border-radius: 80px;
+}
+
+.userinfoname{
+    margin-top: 1em;
+    font-size: 1.4em;
+}
+
+.userinfoactive{
+    font-size: 1em;
+}
+.accordian{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6em 1em;
+    background-color: aliceblue;
+    margin-block: 1em;
+}
+.accordiantext{
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.sharedimg{
+    display: grid;
+    gap: 0.5em;
+    grid-template-columns: repeat(2,1fr);
+    height: 45vh;
+    overflow-y: auto;
+    background-color: white;
+    padding: 0.5em;
+    transition: display 0.5s;
+}
+.sharedimg::-webkit-scrollbar{
+    display: none;
+}
+.sharedimg img{
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#sharedimg:checked~.sharedimg{
+    display: none;
+}
+#sharedimg{
+    display: none;
+}
+.hidden{
+    display: none;
+}
+
+.mymessagetext p img{
+    transition: all 0.5s ease-in-out;
+}
+.mymessagetext p img:hover{
+    transform: translateX(-5em) scale(1.2);
+    cursor:pointer
+}
+.friendmsg p img:hover{
+    transform: translateX(5em) scale(1.2);
+    cursor:pointer
+}
+.activefriendsingle{
+    background-position: center;
+    background-size: cover;
+}
+.profilepicture{
+    background-color: white;
+    height: 5em;
+    width: 5em;
+    border-radius: 10em;
+    background-position: center;
+    background-size: cover;
+}
+.profilename h3{
+    font-size: 1.3em;
+    margin-left: 1em;
+    margin-bottom: 0;
+}
+.profile{
+    background-color: white;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.profilepicandname{
+    display: flex;
+    align-items: center;
+}
+.logoutkey{
+    font-size: 1.2em;
+    cursor: pointer;
+    scale:1;
+    transition: 0.2s ease-in-out;
+}
+.logoutkey:hover{
+    scale: 1.1;
+    color: #0081B4;
+}
+.sendicon{
+    color: rgb(53, 53, 53) !important;
+    scale: 1;
+}
+.sendicon:hover{
+    transform: scale(1.1);
+    color: #0081B4 !important;
+}
+
+
+/* Typing */
+.typingmessage{
+    display: flex;
+    align-items: center;
+}
+
+.typingmessage p{
+    margin-bottom: 0;
+    font-size: 0.9em;
+    font-weight: 400;
+    font-style: italic;
+    color: grey;
+    margin-left: 1em;
+}

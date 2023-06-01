@@ -1,0 +1,126 @@
+@media only screen and (max-width: 900px) {
+    .smhidden {
+      display: none !important;
+    }
+    .homeimgdiv{
+        display: none;
+    }
+    .logincol{
+        padding-inline: 1em !important;
+    }
+    .inputarea{
+        padding-inline: 3em !important;
+    }
+    .chathead{
+        padding-inline: 0 !important;
+    }
+    .mymessagetext p{
+        max-width: 65%;
+    }
+    .messagearea{
+        padding: 0.1em;
+    }
+  }
+.homeimgdiv{
+    height: 100vh;
+}
+.homeimg{
+    width: 90%;
+    margin-left: 2em;
+}
+.login{
+    background-color: #B0DAFF;
+    padding-inline: 5em;
+}
+.row{
+    margin: 0;
+    padding: 0;
+}
+.row>*{
+    padding: 0;
+}
+.login{
+    height: 100vh;
+}
+.logincol{
+    background-color: #B0DAFF;
+    text-align: center;
+    padding-block: 7rem;
+    padding-inline: 2em 7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+.regcol{
+    padding-inline: 7em 2em;
+}
+.loginmain{
+    background-color: white;
+    padding-block: 2em;
+    border-radius: 30px;
+}
+.inputarea{
+    padding-inline: 5.5em;
+}
+.inputfield{
+    margin-bottom: 2rem;
+}
+.loginbtn{
+    padding-inline: 5rem;
+    border-radius: 20px;
+    margin-block: 1.5rem;
+    background-color: #0081B4;
+    color: white;
+    border: 2px solid #0081B4;
+    transition: 0.2s ease-in-out;
+}
+.loginbtn:hover{
+    color: #0081B4;
+    background-color: white;
+    border: #0081B4 solid 2px;
+}
+.registerlink{
+    text-align: left;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.registerlink h6{
+    margin-right: 2rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+.registerlink a{
+    text-decoration: none;
+    line-height: 0;
+}
+.inputfilefield{
+    display: flex;
+    align-items: center;
+}
+.registeravatardiv{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 35px;
+    margin-right: 2rem;
+    border: 1px rgba(73, 73, 255, 0.34) solid;
+}
+.registeravatardiv img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 35px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px rgba(73, 73, 255, 0.34) solid;
+}
+.uploadbtn:hover >label{
+    color: white!important;
+}
+
+.noactive{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
