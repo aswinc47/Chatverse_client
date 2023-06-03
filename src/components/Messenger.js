@@ -247,8 +247,8 @@ function Messenger() {
                 <div className='friends'>
 
                 {friends && friends.length>0 ? friends.map(friend=>(
-                    <div onClick={()=> setActiveuser(friend)}
-                     className={friend._id === activeuser._id ? 'hover-friends friend-active' : 'hover-friends'}>
+                    <div onClick={()=> setActiveuser(friend.friendDetails)}
+                     className={friend.friendDetails._id === activeuser._id ? 'hover-friends friend-active' : 'hover-friends'}>
                         <Friend friend={friend} />
                     </div>
                 )): <h6 className='text-center mt-3'>No friends</h6>}

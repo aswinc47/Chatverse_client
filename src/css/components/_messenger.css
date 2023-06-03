@@ -55,13 +55,15 @@
 .friend{
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .friendname{
     margin-left: 1em;
     font-weight: 500;
+    margin-bottom: 0.4em;
 }
 .hover-friends{
-    padding: 0.4em;
+    padding: 0.55em;
     cursor: pointer;
     border-radius: 15px;
     margin-bottom: 0.5em;
@@ -420,4 +422,27 @@
     color: black;
     background-color: white;
     border-radius: 40px;
+}
+
+.newMessage{
+    color: rgb(57, 57, 57);
+    padding-left: 1rem;
+    margin-bottom: 0;
+    font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.newmessagediv{
+    width: 100%;
+}
+
+.leftfriendnamemsg{
+    width: 70%;
+}
+
+.leftavatar{
+    min-width: 3em;
 }
