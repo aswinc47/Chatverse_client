@@ -415,3 +415,9 @@
     color: grey;
     margin-left: 1em;
 }
+
+.notify{
+    color: black;
+    background-color: white;
+    border-radius: 40px;
+}

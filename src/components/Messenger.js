@@ -1,7 +1,5 @@
-import { IconButton, InputAdornment, TextField } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 import {useNavigate} from 'react-router-dom';
-import { HiSearch } from "react-icons/hi";
 import ActiveFriends from './ActiveFriends';
 import Friend from './Friend';
 import RightSide from './RightSide';
@@ -11,15 +9,21 @@ import { BiLogOut } from "react-icons/bi";
 import { userLogout } from '../store/actions/authAction';
 import NoActiveuser from './NoActiveuser';
 import {io} from 'socket.io-client'
+import toast,{Toaster} from 'react-hot-toast';
+import useSound from 'use-sound'
+import notificationSound from '../audios/receive.mp3'
+import sendSound from '../audios/sent.mp3'
 import {SOCKET_MESSAGE_SUCCESS} from '../store/types/messengerType'
 
 function Messenger() {
-
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const scrollRef = useRef()
     const socket = useRef()
+
+    const [playSend] = useSound(sendSound)
+    const [playNotification] = useSound(notificationSound)
 
     const {friends,messages} = useSelector(state => state.messenger)
     const {userDetails,authenticate} = useSelector(state=>state.auth)
@@ -64,6 +68,17 @@ function Messenger() {
         }
     },[socketmessage])
 
+    useEffect(()=>{
+        if(socketmessage && socketmessage.senderId !== activeuser._id && socketmessage.receiverId === userDetails.id){
+            playNotification()
+            if(socketmessage.message.text){
+                toast.success(`${socketmessage.senderName} : ${socketmessage.message.text}`)
+            }else{
+                toast.success(`${socketmessage.senderName} send you an image.`)
+            }
+        }
+    },[socketmessage])
+
 
 
 
@@ -80,6 +95,7 @@ function Messenger() {
     
     const sendMessage = (e)=>{
         e.preventDefault()
+        playSend()
         const data = {
             sender:userDetails.username,
             receiverId:activeuser._id,
@@ -177,6 +193,25 @@ function Messenger() {
 
   return (
     <div className='messenger'>
+        <Toaster
+            position = 'top-right'
+            containerClassName='notification'
+            toastOptions={{
+                // Define default options
+                className: 'notify',
+                duration: 5000,
+
+                // Default options for specific types
+                success: {
+                duration: 5000,
+                theme: {
+                    primary: 'green',
+                    secondary: 'black',
+                },
+                },
+            }}
+        />
+
         <div className='row'>
             <div className={activeuser?'smhidden leftside col-md-3':'col-md-3 leftside'}>
                 <div className='leftsidetop'>
